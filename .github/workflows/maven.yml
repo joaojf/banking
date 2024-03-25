@@ -36,4 +36,4 @@ jobs:
         verbose: true
         token: ${{ secrets.CODECOV_TOKEN }}
         slug: joaojf/banking
-
+	file: ./target/site/jacoco/index.html
