@@ -32,8 +32,8 @@ jobs:
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v4.0.1
       with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./target/site/jacoco/jacoco.xml
         flags: smart-tests
         verbose: true
-        token: ${{ secrets.CODECOV_TOKEN }}
         slug: joaojf/banking
-	file: ./target/site/jacoco/jacoco.xml
