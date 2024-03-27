@@ -33,7 +33,7 @@ jobs:
       uses: codecov/codecov-action@v4.0.1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        file: /home/joao/Workspaces/banking-system/target/site/jacoco/jacoco.xml
+        file: target/site/jacoco/jacoco.xml
         flags: smart-tests
         verbose: true
         slug: joaojf/banking
