@@ -13,7 +13,9 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static com.bank.enums.OperacaoEnum.*;
+import static com.bank.enums.OperacaoEnum.DEPOSITO;
+import static com.bank.enums.OperacaoEnum.SAQUE;
+import static com.bank.enums.OperacaoEnum.TRANSFERENCIA;
 
 
 @RequiredArgsConstructor

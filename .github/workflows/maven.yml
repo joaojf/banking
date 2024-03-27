@@ -10,7 +10,7 @@ name: maven
 
 on:
   push:
-    branches: [ "task/setup-github-actions-codecov" ]
+    branches: [ "master" ]
 
 jobs:
   build:
