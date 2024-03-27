@@ -6,15 +6,14 @@ import com.bank.exception.BadRequestException;
 import com.bank.repository.OperacaoRepository;
 import com.bank.request.OperacaoRequest;
 import com.bank.request.TransferenciaRequest;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-import static com.bank.enums.OperacaoEnum.DEPOSITO;
-import static com.bank.enums.OperacaoEnum.SAQUE;
-import static com.bank.enums.OperacaoEnum.TRANSFERENCIA;
+import static com.bank.enums.OperacaoEnum.*;
 
 
 @RequiredArgsConstructor
@@ -31,6 +30,7 @@ public class OperacaoService {
         return service.findByIdentificadorContaOrThrowBadRequestException(identificador).getSaldo();
     }
 
+    @Transactional
     public Conta deposito(OperacaoRequest request) {
         Conta conta = service.findByIdentificadorContaOrThrowBadRequestException(request.getIdentificador());
 
@@ -50,6 +50,7 @@ public class OperacaoService {
         return conta;
     }
 
+    @Transactional
     public Conta saque(OperacaoRequest request) {
         Conta conta = service.findByIdentificadorContaOrThrowBadRequestException(request.getIdentificador());
 
@@ -72,6 +73,7 @@ public class OperacaoService {
         return repository.findAllByConta(conta);
     }
 
+    @Transactional
     public void transferencia(TransferenciaRequest request) {
         Conta origem = service.findByIdentificadorContaOrThrowBadRequestException(request.getOrigem());
         Conta destino = service.findByIdentificadorContaOrThrowBadRequestException(request.getDestino());
