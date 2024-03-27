@@ -28,7 +28,7 @@ public class Conta {
     @Column(length = 7, unique = true, nullable = false)
     private String identificadorConta;
 
-    @Column(columnDefinition = "DECIMAL(12,2) DEFAULT 0.0")
+    @Column(columnDefinition = "DECIMAL(12,2)")
     private BigDecimal saldo;
 
     @CreationTimestamp
