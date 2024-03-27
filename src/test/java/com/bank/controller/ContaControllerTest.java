@@ -110,8 +110,8 @@ class ContaControllerTest {
 
     private static Conta createConta() {
         return Conta.builder().id(1L).identificadorConta(IDENTIFICADOR_CONTA).saldo(BigDecimal.ZERO)
-                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES))
-                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES)).build();
+                .createdAt(LocalDateTime.of(2024, 3, 27, 18, 0, 13))
+                .updatedAt(LocalDateTime.of(2024, 3, 27, 18, 0, 13)).build();
     }
 
     private static ContaRequest createContaRequest() {
