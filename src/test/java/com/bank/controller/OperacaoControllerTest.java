@@ -125,25 +125,25 @@ class OperacaoControllerTest {
 
     private static Conta createConta() {
         return Conta.builder().id(1L).identificadorConta(IDENTIFICADOR_CONTA).saldo(BigDecimal.ZERO)
-                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS))
-                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS)).build();
+                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES))
+                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES)).build();
     }
 
     private static Conta createContaDeposito() {
         return Conta.builder().id(1L).identificadorConta(IDENTIFICADOR_CONTA).saldo(BigDecimal.TEN)
-                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS))
-                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS)).build();
+                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES))
+                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES)).build();
     }
 
     private static Conta createContaSaque() {
         return Conta.builder().id(1L).identificadorConta(IDENTIFICADOR_CONTA).saldo(BigDecimal.ONE)
-                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS))
-                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS)).build();
+                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES))
+                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES)).build();
     }
 
     private static Operacao createOperacao() {
         return Operacao.builder().id(1L).tipo(OperacaoEnum.EXTRATO).valor(BigDecimal.ZERO)
-                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS))
-                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS)).conta(createConta()).build();
+                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES))
+                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES)).conta(createConta()).build();
     }
 }

@@ -66,7 +66,7 @@ class ClienteControllerTest {
 
     @Test
     @DisplayName("findById should return cliente find by id when successful")
-    void findByIdhouldReturnClienteFindByIdWhenSuccessful() {
+    void findByIdShouldReturnClienteFindByIdWhenSuccessful() {
         Cliente cliente = clienteController.findById(1L).getBody();
 
         Assertions.assertThat(cliente).isNotNull().isEqualTo(createCliente());
@@ -106,14 +106,14 @@ class ClienteControllerTest {
 
     private static Cliente createCliente() {
         return Cliente.builder().id(1L).nome("Joao").documento("12345678901").conta(createConta())
-                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS))
-                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS)).build();
+                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES))
+                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES)).build();
     }
 
     private static Conta createConta() {
         return Conta.builder().id(1L).identificadorConta(IDENTIFICADOR_CONTA).saldo(BigDecimal.ZERO)
-                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS))
-                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS)).build();
+                .createdAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES))
+                .updatedAt(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES)).build();
     }
 
     private static ClienteRequestUpdate createClienteRequestUpdate() {
